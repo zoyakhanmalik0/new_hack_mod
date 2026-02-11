@@ -544,5 +544,21 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
             </div>
         </section>
     </div>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof ttq !== "undefined") {
+    document.querySelectorAll('.download-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        ttq.track('ClickButton', {
+          content_name: btn.innerText.trim(),
+          url: window.location.href
+        });
+      });
+    });
+  }
+});
+</script>
+
 </body>
 </html>
